@@ -5,6 +5,9 @@
 ```bash
 $ npm install
 $ npm start
+```
+### run another command at the same time
+```bash
 $ npm run server:dev
 ```
 
