@@ -9,12 +9,25 @@ export const routes = (
   </div>
 );
 
-function RouterConfig({ history }) {
+export const mobileRoutes = (
+  <div>
+    <Route path="/" component={IndexPage} />
+    <Route path="/about" component={IndexPage} />
+  </div>
+);
+
+export const RouterConfig = ({ history }) => {
   return (
     <Router history={history}>
       { routes }
     </Router>
   );
-}
+};
 
-export default RouterConfig;
+export const MobileRouterConfig = ({ history }) => {
+  return (
+    <Router history={history}>
+      { mobileRoutes }
+    </Router>
+  );
+};

@@ -5,6 +5,7 @@ import proxy from 'http-proxy-middleware';
 const app = express();
 
 app.use(require('./ssrMiddleware'));
+app.use(require('./ssrMobileMiddleware'));
 app.disable('x-powered-by');
 
 if (process.env.NODE_ENV !== 'production') {

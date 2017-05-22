@@ -1,9 +1,9 @@
 import React from 'react';
 import dva from 'dva';
 import { RouterContext } from 'dva/router';
-import router from './router';
+import { RouterConfig, MobileRouterConfig } from './router';
 
-export default function createApp(opts, isServer) {
+export default function createApp(opts, isServer, isMobile) {
   // 1. Initialize
   const app = dva(opts);
 
@@ -13,13 +13,17 @@ export default function createApp(opts, isServer) {
   // 3. Model
   // app.model(require('./models/example'));
 
+  // 4. Router
   if (isServer) {
     app.router(({ history, renderProps}) => {
       return <RouterContext {...renderProps} />;
     });
   } else {
-    // 4. Router
-    app.router(router);
+    if (isMobile) {
+      app.router(MobileRouterConfig);
+    } else {
+      app.router(RouterConfig);
+    }
   }
   return app;
 }
