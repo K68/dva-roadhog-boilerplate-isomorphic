@@ -6,7 +6,6 @@
   "plugins": [
     "add-module-exports",
     "transform-runtime",
-    ["import", { "libraryName": "antd", "style": "css" }],
-    ["import", { "style": "css", "libraryName": "antd-mobile" }]
+    ["import", { "libraryName": "antd", "style": "css" }]
   ]
 }
