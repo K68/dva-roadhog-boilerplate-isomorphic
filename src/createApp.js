@@ -3,7 +3,7 @@ import dva from 'dva';
 import { RouterContext } from 'dva/router';
 import { RouterConfig, MobileRouterConfig } from './router';
 
-export default function createApp(opts, isServer, isMobile) {
+export const createApp = (opts, isServer, isMobile) => {
   // 1. Initialize
   const app = dva(opts);
 
@@ -20,10 +20,11 @@ export default function createApp(opts, isServer, isMobile) {
     });
   } else {
     if (isMobile) {
+      console.log('MobileRouterConfig');
       app.router(MobileRouterConfig);
     } else {
       app.router(RouterConfig);
     }
   }
   return app;
-}
+};

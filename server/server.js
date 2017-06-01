@@ -15,7 +15,7 @@ require_hacker.resolver((filename, module) => {
 const app = express();
 
 app.use(require('./ssrMiddleware'));
-app.use(require('./ssrMobileMiddleware'));
+//app.use(require('./ssrMobileMiddleware'));
 app.disable('x-powered-by');
 
 if (process.env.NODE_ENV !== 'production') {

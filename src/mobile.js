@@ -1,6 +1,6 @@
 import { browserHistory } from 'dva/router';
-import createApp from './createApp';
-import './index.css';
+import { createApp } from './createApp';
+import './mobile.css';
 
 const app = createApp({
   history: browserHistory,

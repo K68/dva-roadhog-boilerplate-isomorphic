@@ -2,11 +2,11 @@ import { match, RoutingContext, createMemoryHistory } from 'dva/router';
 import { renderToString } from 'react-dom/server'
 import { query } from '../src/services/example';
 import { mobileRoutes } from '../src/router';
-import createApp from '../src/createApp';
+import { createApp } from '../src/createApp';
 
 export default function(req, res, next) {
   match({
-    mobileRoutes,
+    routes: mobileRoutes,
     location: req.url,
   }, (err, redirectLocation, renderProps) => {
     if (err) {

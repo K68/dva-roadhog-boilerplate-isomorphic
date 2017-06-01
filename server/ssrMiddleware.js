@@ -2,7 +2,7 @@ import { match, RoutingContext, createMemoryHistory } from 'dva/router';
 import { renderToString } from 'react-dom/server'
 import { query } from '../src/services/example';
 import { routes } from '../src/router';
-import createApp from '../src/createApp';
+import { createApp } from '../src/createApp';
 
 export default function(req, res, next) {
   match({
